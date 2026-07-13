@@ -81,10 +81,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Portfolio of Mudavath Kumar — Full Stack Developer & AI/LLM/RAG Engineer building striking, unforgettable products." },
       { name: "author", content: "Mudavath Kumar" },
       { property: "og:title", content: "Kumar — Full Stack & AI Engineer" },
-      { property: "og:description", content: "Portfolio of Mudavath Kumar — Full Stack Developer & AI/LLM/RAG Engineer." },
+      { property: "og:description", content: "Portfolio of Mudavath Kumar — Full Stack Developer & AI/LLM/RAG Engineer building striking, unforgettable products." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Kumar — Full Stack & AI Engineer" },
+      { name: "twitter:description", content: "Portfolio of Mudavath Kumar — Full Stack Developer & AI/LLM/RAG Engineer building striking, unforgettable products." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/76daf7df-0deb-4bff-aae8-9cf6918d4491/id-preview-2b25fa3e--eaaab4b2-3cbf-447a-81d8-eafbfa2e192e.lovable.app-1783967081719.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/76daf7df-0deb-4bff-aae8-9cf6918d4491/id-preview-2b25fa3e--eaaab4b2-3cbf-447a-81d8-eafbfa2e192e.lovable.app-1783967081719.png" },
     ],
     links: [
       {
