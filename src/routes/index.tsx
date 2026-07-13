@@ -4,6 +4,9 @@ import { MarqueeSection } from "@/components/portfolio/MarqueeSection";
 import { AboutSection } from "@/components/portfolio/AboutSection";
 import { ServicesSection } from "@/components/portfolio/ServicesSection";
 import { ProjectsSection } from "@/components/portfolio/ProjectsSection";
+import { ExperienceSection } from "@/components/portfolio/ExperienceSection";
+import { CredentialsSection } from "@/components/portfolio/CredentialsSection";
+import { ContactSection } from "@/components/portfolio/ContactSection";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -17,6 +20,9 @@ function Index() {
       <AboutSection />
       <ServicesSection />
       <ProjectsSection />
+      <ExperienceSection />
+      <CredentialsSection />
+      <ContactSection />
     </main>
   );
 }

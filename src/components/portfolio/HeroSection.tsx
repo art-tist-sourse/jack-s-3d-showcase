@@ -19,9 +19,9 @@ export function HeroSection() {
         ))}
       </FadeIn>
 
-      <div className="overflow-hidden mt-6 sm:mt-4 md:-mt-5 px-6 md:px-10 relative z-0">
+      <div className="overflow-hidden mt-6 sm:mt-4 md:-mt-2 px-6 md:px-10 relative z-0">
         <FadeIn as="h1" delay={0.15} y={40}
-          className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-[14vw] sm:text-[15vw] md:text-[16vw] lg:text-[17.5vw]"
+          className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-[11vw] sm:text-[12vw] md:text-[13vw] lg:text-[14.5vw]"
         >
           Hi, i&apos;m kumar
         </FadeIn>
