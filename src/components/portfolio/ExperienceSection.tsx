@@ -2,14 +2,36 @@ import { FadeIn } from "./FadeIn";
 
 const EXP = [
   {
-    role: "Full Stack Developer Intern",
-    company: "Edunet Foundation",
-    period: "Apr 2023 – May 2023",
+    role: "System Administrator Intern",
+    company: "ServiceNow",
+    period: "Mar 2026 – Present",
     location: "Remote",
     bullets: [
-      "Built 6+ RESTful API endpoints in Express.js connecting a React frontend to MongoDB, enabling full CRUD in a 2-month sprint.",
-      "Developed 4 responsive UI pages in HTML, CSS, and JavaScript with a mobile-first approach across every component.",
-      "Ran Agile stand-ups with a 4-person team, led code reviews and shipped 10+ bug fixes before production deploys.",
+      "Configuring and administering the ServiceNow Now Platform for IT service management workflows.",
+      "Managing users, roles, groups and access controls; building service catalog items, forms and business rules.",
+      "Implementing ITSM processes across Incident, Problem and Change Management with reports and SLA dashboards.",
+    ],
+  },
+  {
+    role: "Trainee — DSA & Problem Solving",
+    company: "Smart Interviews",
+    period: "May 2025 – Present",
+    location: "On-site",
+    bullets: [
+      "Intensive training in data structures, algorithms and advanced problem solving.",
+      "Solved 150+ DSA problems and earned Smart Coder (Bronze) — Global Rank 9,503 / 53,921.",
+      "Collaborating with peers and mentors on best practices, code reviews and mock interviews.",
+    ],
+  },
+  {
+    role: "Full Stack Developer",
+    company: "Edunet Foundation",
+    period: "Mar 2025 – Present",
+    location: "Hyderabad, India",
+    bullets: [
+      "Developing a recipe sharing platform with the team — full CRUD, auth and responsive UI.",
+      "Built 6+ RESTful endpoints in Express connecting React frontend to MongoDB.",
+      "Shipping features and bug fixes through Agile stand-ups and code reviews with a 4-person team.",
     ],
   },
 ];
