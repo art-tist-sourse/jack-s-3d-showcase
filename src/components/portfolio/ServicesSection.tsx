@@ -1,70 +1,86 @@
 import { FadeIn } from "./FadeIn";
 
 const GROUPS: { title: string; items: string[] }[] = [
-  { title: "Programming Languages", items: ["Java", "C", "JavaScript", "TypeScript", "Python"] },
-  { title: "Libraries & Frameworks", items: ["React", "Vite", "Node.js", "Django", "GSAP", "Framer Motion"] },
-  { title: "AI Agent Engineering", items: ["RAG Pipelines", "LangChain", "Claude API", "Groq API", "Sentence Transformers", "Prompt Engineering", "Vector Databases", "AI Agent Design"] },
-  { title: "AI Tools", items: ["ChatGPT", "Claude AI", "GitHub Copilot", "Cursor AI", "Perplexity AI", "Clacky AI", "Hugging Face", "Flowise", "Botpress"] },
-  { title: "Databases", items: ["MongoDB", "MySQL", "Supabase", "Neon (PostgreSQL)", "Firebase"] },
-  { title: "Tools & Platforms", items: ["Git", "GitHub", "VS Code", "Postman", "Vercel", "Netlify", "AWS"] },
-  { title: "Web Development", items: ["REST APIs", "Auth & Authorization", "Responsive Design", "Web App Development", "CRUD Design", "API Integration"] },
-  { title: "Core CS", items: ["DSA", "OOP", "Operating Systems", "DBMS", "Software Engineering", "ML Fundamentals", "Cloud Computing", "Competitive Programming"] },
+  { title: "Languages", items: ["Java", "C", "JavaScript", "TypeScript", "Python"] },
+  { title: "Frameworks", items: ["React", "Vite", "Node.js", "Django", "GSAP", "Framer Motion"] },
+  { title: "AI Engineering", items: ["RAG Pipelines", "LangChain", "Claude API", "Groq API", "Sentence Transformers", "Prompt Engineering", "Vector DBs", "Agent Design"] },
+  { title: "AI Tools", items: ["ChatGPT", "Claude", "Copilot", "Cursor", "Perplexity", "Clacky", "Hugging Face", "Flowise", "Botpress"] },
+  { title: "Databases", items: ["MongoDB", "MySQL", "Supabase", "Neon", "Firebase"] },
+  { title: "Platforms", items: ["Git", "GitHub", "VS Code", "Postman", "Vercel", "Netlify", "AWS"] },
+  { title: "Web", items: ["REST APIs", "Auth", "Responsive UI", "CRUD", "API Integration"] },
+  { title: "Core CS", items: ["DSA", "OOP", "OS", "DBMS", "SE", "ML", "Cloud", "CP"] },
 ];
 
 const PROFILES = [
-  { name: "LeetCode", href: "https://leetcode.com/u/Mudavath_kumar_1", desc: "Solving DSA problems and sharpening algorithmic thinking." },
-  { name: "Codeforces", href: "https://codeforces.com/", desc: "Competing in rated contests and CP practice." },
-  { name: "CodeChef", href: "https://www.codechef.com/", desc: "Monthly cook-offs and long challenges." },
-  { name: "HackerRank", href: "https://www.hackerrank.com/", desc: "Badges and certifications in languages & algorithms." },
-  { name: "GeeksforGeeks", href: "https://www.geeksforgeeks.org/", desc: "Learning core CS and cross-domain problems." },
+  { name: "LeetCode", href: "https://leetcode.com/u/Mudavath_kumar_1", handle: "Mudavath_kumar_1" },
+  { name: "GitHub", href: "https://github.com/Mudavath-kumar", handle: "Mudavath-kumar" },
+  { name: "LinkedIn", href: "https://linkedin.com/in/mudavath-kumar-mudavath-kumar", handle: "mudavath-kumar" },
+  { name: "Codeforces", href: "https://codeforces.com/", handle: "@mudavath" },
+  { name: "CodeChef", href: "https://www.codechef.com/", handle: "@mudavath" },
+  { name: "HackerRank", href: "https://www.hackerrank.com/", handle: "@mudavath" },
 ];
 
 export function ServicesSection() {
   return (
-    <section id="skills" className="rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32" style={{ background: "#FFFFFF" }}>
-      <h2
-        className="font-black uppercase text-center mb-4"
-        style={{ color: "#0C0C0C", fontSize: "clamp(3rem, 12vw, 160px)", lineHeight: 1 }}
-      >
-        Skills
-      </h2>
-      <p className="text-center uppercase tracking-widest text-xs sm:text-sm mb-16 sm:mb-20" style={{ color: "#0C0C0C", opacity: 0.5 }}>
-        My Toolkit — Skills & Expertise
-      </p>
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-        {GROUPS.map((g, i) => (
-          <FadeIn key={g.title} delay={i * 0.05} y={20}>
-            <div className="rounded-[28px] border border-[#0C0C0C]/15 p-6 sm:p-8 h-full hover:border-[#0C0C0C]/50 transition-colors">
-              <div className="font-black uppercase mb-4" style={{ color: "#0C0C0C", fontSize: "clamp(1rem, 1.8vw, 1.5rem)" }}>
-                {g.title}
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {g.items.map((it) => (
-                  <span key={it} className="rounded-full border border-[#0C0C0C]/20 px-3 py-1.5 text-xs sm:text-sm" style={{ color: "#0C0C0C" }}>
-                    {it}
-                  </span>
-                ))}
-              </div>
-            </div>
+    <section id="skills" className="relative px-5 sm:px-8 md:px-10 py-24 sm:py-28 md:py-32" style={{ background: "#0C0C0C" }}>
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14 sm:mb-20">
+          <FadeIn as="h2" delay={0} y={40}
+            className="hero-heading font-black uppercase leading-none tracking-tight"
+            style={{ fontSize: "clamp(3rem, 12vw, 160px)" }}
+          >
+            Skills
           </FadeIn>
-        ))}
-      </div>
+          <FadeIn delay={0.1} y={20} className="text-[#D7E2EA]/60 uppercase tracking-widest text-xs sm:text-sm md:max-w-xs md:text-right">
+            A working toolkit built through internships, hackathons and shipped side-projects.
+          </FadeIn>
+        </div>
 
-      <div className="max-w-6xl mx-auto mt-20 sm:mt-24">
-        <h3 className="font-black uppercase text-center mb-10" style={{ color: "#0C0C0C", fontSize: "clamp(1.75rem, 4vw, 3rem)", lineHeight: 1 }}>
-          Coding Profiles
-        </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {PROFILES.map((p, i) => (
-            <FadeIn key={p.name} delay={i * 0.05} y={20}>
-              <a href={p.href} target="_blank" rel="noreferrer"
-                className="block rounded-[24px] border border-[#0C0C0C]/15 p-6 hover:border-[#B600A8] hover:-translate-y-1 transition-all">
-                <div className="font-black uppercase mb-2" style={{ color: "#0C0C0C", fontSize: "1.25rem" }}>{p.name}</div>
-                <p className="text-sm" style={{ color: "#0C0C0C", opacity: 0.6 }}>{p.desc}</p>
-                <div className="mt-4 text-xs uppercase tracking-widest" style={{ color: "#B600A8" }}>Visit Profile →</div>
-              </a>
+        <div className="flex flex-col divide-y divide-[#D7E2EA]/15 border-y border-[#D7E2EA]/15">
+          {GROUPS.map((g, i) => (
+            <FadeIn key={g.title} delay={i * 0.05} y={20}>
+              <div className="grid grid-cols-12 gap-4 sm:gap-6 py-6 sm:py-8 group hover:bg-white/[0.02] transition-colors px-2 sm:px-4">
+                <div className="col-span-2 sm:col-span-1 text-[#B600A8] font-medium tabular-nums text-sm sm:text-base pt-1">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <div className="col-span-10 sm:col-span-4 md:col-span-3">
+                  <div className="text-[#D7E2EA] font-black uppercase leading-tight" style={{ fontSize: "clamp(1.25rem, 2.4vw, 2rem)" }}>
+                    {g.title}
+                  </div>
+                </div>
+                <div className="col-span-12 sm:col-span-7 md:col-span-8 flex flex-wrap gap-2 sm:gap-2.5 items-start">
+                  {g.items.map((it) => (
+                    <span key={it} className="text-[#D7E2EA]/75 border border-[#D7E2EA]/20 rounded-full px-3 py-1 text-xs sm:text-sm group-hover:border-[#D7E2EA]/40 transition-colors">
+                      {it}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </FadeIn>
           ))}
+        </div>
+
+        <div className="mt-24 sm:mt-28">
+          <FadeIn as="h3" delay={0} y={30}
+            className="hero-heading font-black uppercase leading-none tracking-tight mb-10"
+            style={{ fontSize: "clamp(2rem, 6vw, 4.5rem)" }}
+          >
+            Coding Profiles
+          </FadeIn>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+            {PROFILES.map((p, i) => (
+              <FadeIn key={p.name} delay={i * 0.05} y={20}>
+                <a href={p.href} target="_blank" rel="noreferrer"
+                  className="flex items-center justify-between rounded-full border border-[#D7E2EA]/25 px-6 py-4 text-[#D7E2EA] hover:border-[#B600A8] hover:text-white group transition-colors">
+                  <div className="flex flex-col">
+                    <span className="font-medium uppercase tracking-wide text-sm sm:text-base">{p.name}</span>
+                    <span className="text-[#D7E2EA]/50 text-xs">{p.handle}</span>
+                  </div>
+                  <span className="text-[#B600A8] group-hover:translate-x-1 transition-transform">↗</span>
+                </a>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </div>
     </section>

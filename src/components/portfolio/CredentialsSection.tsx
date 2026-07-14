@@ -71,26 +71,53 @@ export function CredentialsSection() {
         </div>
 
         <div>
-          <FadeIn as="h2" delay={0} y={40}
-            className="hero-heading font-black uppercase leading-none tracking-tight mb-10"
-            style={{ fontSize: "clamp(2.5rem, 9vw, 120px)" }}
-          >
-            Certifications
-          </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {CERTS.map((c, i) => (
-              <FadeIn key={c.name} delay={Math.min(i * 0.03, 0.4)} y={20}>
-                <div className="h-full rounded-[24px] border border-[#D7E2EA]/25 p-5 hover:border-[#B600A8] hover:-translate-y-1 transition-all flex flex-col gap-2">
-                  <div className="flex items-center justify-between text-[10px] uppercase tracking-widest">
-                    <span className="text-[#B600A8]">{c.tag}</span>
-                    <span className="text-[#D7E2EA]/50">{c.year}</span>
-                  </div>
-                  <div className="text-[#D7E2EA] font-medium leading-snug text-sm sm:text-base">{c.name}</div>
-                  <div className="text-[#D7E2EA]/50 text-xs">{c.org}</div>
-                </div>
-              </FadeIn>
-            ))}
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+            <FadeIn as="h2" delay={0} y={40}
+              className="hero-heading font-black uppercase leading-none tracking-tight"
+              style={{ fontSize: "clamp(2.5rem, 9vw, 120px)" }}
+            >
+              Certifications
+            </FadeIn>
+            <FadeIn delay={0.1} y={20} className="text-[#D7E2EA]/60 uppercase tracking-widest text-xs sm:text-sm">
+              {CERTS.length} credentials · 2025 – 2026
+            </FadeIn>
           </div>
+          {(() => {
+            const grouped = CERTS.reduce<Record<string, Cert[]>>((acc, c) => {
+              (acc[c.year] ||= []).push(c);
+              return acc;
+            }, {});
+            const years = Object.keys(grouped).sort((a, b) => Number(b) - Number(a));
+            return (
+              <div className="flex flex-col gap-16">
+                {years.map((year) => (
+                  <div key={year} className="grid grid-cols-12 gap-4 sm:gap-8">
+                    <FadeIn y={20} className="col-span-12 md:col-span-2">
+                      <div className="hero-heading font-black leading-none" style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)" }}>{year}</div>
+                      <div className="text-[#D7E2EA]/50 text-xs uppercase tracking-widest mt-2">{grouped[year].length} certs</div>
+                    </FadeIn>
+                    <div className="col-span-12 md:col-span-10 flex flex-col divide-y divide-[#D7E2EA]/15 border-y border-[#D7E2EA]/15">
+                      {grouped[year].map((c, i) => (
+                        <FadeIn key={c.name} delay={Math.min(i * 0.02, 0.3)} y={10}>
+                          <div className="grid grid-cols-12 gap-3 items-baseline py-4 sm:py-5 px-1 group hover:bg-white/[0.02] transition-colors">
+                            <div className="col-span-12 sm:col-span-7 text-[#D7E2EA] font-medium leading-snug text-sm sm:text-base group-hover:text-white transition-colors">
+                              {c.name}
+                            </div>
+                            <div className="col-span-7 sm:col-span-3 text-[#D7E2EA]/55 text-xs sm:text-sm">
+                              {c.org}
+                            </div>
+                            <div className="col-span-5 sm:col-span-2 text-right">
+                              <span className="text-[10px] sm:text-xs uppercase tracking-widest text-[#B600A8]">{c.tag}</span>
+                            </div>
+                          </div>
+                        </FadeIn>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            );
+          })()}
         </div>
       </div>
     </section>
