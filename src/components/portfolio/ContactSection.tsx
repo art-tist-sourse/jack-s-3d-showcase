@@ -7,7 +7,7 @@ const LINKS = [
   { icon: Phone, label: "+91 75690 55938", href: "tel:+917569055938" },
   { icon: Globe, label: "mudavath-kumar.me", href: "https://mudavath-kumar.me" },
   { icon: Github, label: "github.com/Mudavath-kumar", href: "https://github.com/Mudavath-kumar" },
-  { icon: Linkedin, label: "linkedin.com/in/mudavath-kumar", href: "https://linkedin.com/in/mudavath-kumar" },
+  { icon: Linkedin, label: "linkedin.com/in/mudavath-kumar-mudavath-kumar", href: "https://linkedin.com/in/mudavath-kumar-mudavath-kumar" },
   { icon: Code2, label: "leetcode.com/u/Mudavath_kumar_1", href: "https://leetcode.com/u/Mudavath_kumar_1" },
 ];
 
