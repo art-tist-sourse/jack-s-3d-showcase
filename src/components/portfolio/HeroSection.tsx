@@ -21,9 +21,10 @@ export function HeroSection() {
 
       <div className="overflow-hidden mt-6 sm:mt-4 md:-mt-2 px-6 md:px-10 relative z-0">
         <FadeIn as="h1" delay={0.15} y={40}
-          className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-[11vw] sm:text-[12vw] md:text-[13vw] lg:text-[14.5vw]"
+          className="hero-heading font-black uppercase tracking-tight leading-[0.85] w-full text-[18vw] sm:text-[19vw] md:text-[20vw] lg:text-[21vw]"
         >
-          Mudavath Kumar
+          <span className="block whitespace-nowrap">Mudavath</span>
+          <span className="block whitespace-nowrap">Kumar</span>
         </FadeIn>
       </div>
 
