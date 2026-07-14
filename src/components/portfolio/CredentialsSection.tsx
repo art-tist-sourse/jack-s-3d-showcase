@@ -15,29 +15,48 @@ const EDUCATION = [
   },
 ];
 
-const CERTS = [
-  "Smart Coder (Bronze) — Smart Interviews · Global Rank 9,503 / 53,921",
-  "Solved 150+ DSA Problems (2026)",
-  "Claude 101 — Anthropic",
-  "Vibe Coding Fundamentals — Simplilearn SkillUp",
-  "Welcome to ServiceNow — ServiceNow Micro-Certification",
-  "Generative AI for All — Infosys Springboard",
-  "42+ Public Repos · 114+ Followers · Pull Shark ×2",
-  "Contributor to Microsoft VibeVoice and Electron",
+type Cert = { name: string; org: string; tag: string; year: string };
+
+const CERTS: Cert[] = [
+  { name: "ServiceNow System Administrator — Internship", org: "ServiceNow", tag: "Internship", year: "2026" },
+  { name: "Micro-Certification — Welcome to ServiceNow", org: "ServiceNow", tag: "Cloud", year: "2026" },
+  { name: "Claude 101 — Certificate of Completion", org: "Anthropic", tag: "AI", year: "2026" },
+  { name: "McKinsey Forward Program", org: "McKinsey & Company", tag: "Program", year: "2026" },
+  { name: "Smart Interviews Certificate", org: "Smart Interviews", tag: "DSA", year: "2026" },
+  { name: "SANSAD — National Youth Indian Parliament", org: "IIT Kharagpur", tag: "Quiz", year: "2026" },
+  { name: "HackTheRank Online Quiz Event", org: "HackerRank", tag: "Quiz", year: "2026" },
+  { name: "Apertre Product Submission", org: "GDG × Hack2Skill", tag: "Google", year: "2026" },
+  { name: "Guide to Vibe Coding in Windsurf", org: "Analytics Vidhya", tag: "Vibe Coding", year: "2026" },
+  { name: "Vibe Coding Course", org: "Simplilearn SkillUp", tag: "Vibe Coding", year: "2026" },
+  { name: "Gen AI Exchange Hackathon", org: "Google Cloud × Hack2Skill", tag: "AI / Cloud", year: "2026" },
+  { name: "Certificate of Excellence — DSA MasterMind", org: "Lets Code · CodeClash", tag: "DSA", year: "2025" },
+  { name: "24 Hour Hackathon Drill", org: "TechIn × Eduknox", tag: "Hackathon", year: "2025" },
+  { name: "Indian Independence Day Quiz 2025", org: "MyGOV", tag: "Quiz", year: "2025" },
+  { name: "Building Agents with Vertex AI", org: "LinkedIn Learning", tag: "AI / Cloud", year: "2025" },
+  { name: "GDG on Campus Solution Challenge", org: "GDG × Hack2Skill", tag: "Google", year: "2025" },
+  { name: "Web Dev with Python & Django", org: "Connect Club × CodeTantra", tag: "Django", year: "2025" },
+  { name: "Microsoft AI Innovators Hub — AI Workshop", org: "Microsoft Campus, Gachibowli", tag: "Microsoft", year: "2025" },
+  { name: "OpenAI Academy × NxtWave Regional Buildathon", org: "OpenAI × NxtWave", tag: "OpenAI", year: "2025" },
+  { name: "Certificate of Appreciation — IntelliCON 2025", org: "Global AI Hyderabad", tag: "AI Ops", year: "2025" },
+  { name: "Linguaskill Business — English Proficiency (CEFR B1)", org: "Cambridge Assessment", tag: "English", year: "2025" },
+  { name: "Generative AI for All", org: "Infosys Springboard", tag: "AI", year: "2025" },
+  { name: "Cybersecurity Course", org: "Skill India Digital Hub", tag: "Security", year: "2025" },
+  { name: "CRUD Operations in MongoDB", org: "MongoDB", tag: "Database", year: "2025" },
+  { name: "Introduction to SAP", org: "SAP", tag: "Enterprise", year: "2025" },
 ];
 
 export function CredentialsSection() {
   return (
     <section id="credentials" className="px-5 sm:px-8 md:px-10 py-24 sm:py-28 md:py-32" style={{ background: "#0C0C0C" }}>
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+      <div className="max-w-6xl mx-auto flex flex-col gap-20 lg:gap-24">
         <div>
           <FadeIn as="h2" delay={0} y={40}
             className="hero-heading font-black uppercase leading-none tracking-tight mb-10"
-            style={{ fontSize: "clamp(2.25rem, 7vw, 96px)" }}
+            style={{ fontSize: "clamp(2.5rem, 9vw, 120px)" }}
           >
             Education
           </FadeIn>
-          <div className="flex flex-col gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {EDUCATION.map((ed, i) => (
               <FadeIn key={ed.degree} delay={i * 0.1} y={30}>
                 <div className="rounded-[28px] border-2 border-[#D7E2EA]/25 p-6 sm:p-8 hover:border-[#D7E2EA]/60 transition-colors">
@@ -54,15 +73,20 @@ export function CredentialsSection() {
         <div>
           <FadeIn as="h2" delay={0} y={40}
             className="hero-heading font-black uppercase leading-none tracking-tight mb-10"
-            style={{ fontSize: "clamp(2.25rem, 7vw, 96px)" }}
+            style={{ fontSize: "clamp(2.5rem, 9vw, 120px)" }}
           >
-            Awards
+            Certifications
           </FadeIn>
-          <div className="flex flex-col gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {CERTS.map((c, i) => (
-              <FadeIn key={c} delay={i * 0.05} y={20}>
-                <div className="rounded-full border border-[#D7E2EA]/25 px-5 py-3 text-[#D7E2EA]/90 text-sm sm:text-base hover:border-[#B600A8] hover:text-white transition-colors">
-                  {c}
+              <FadeIn key={c.name} delay={Math.min(i * 0.03, 0.4)} y={20}>
+                <div className="h-full rounded-[24px] border border-[#D7E2EA]/25 p-5 hover:border-[#B600A8] hover:-translate-y-1 transition-all flex flex-col gap-2">
+                  <div className="flex items-center justify-between text-[10px] uppercase tracking-widest">
+                    <span className="text-[#B600A8]">{c.tag}</span>
+                    <span className="text-[#D7E2EA]/50">{c.year}</span>
+                  </div>
+                  <div className="text-[#D7E2EA] font-medium leading-snug text-sm sm:text-base">{c.name}</div>
+                  <div className="text-[#D7E2EA]/50 text-xs">{c.org}</div>
                 </div>
               </FadeIn>
             ))}
