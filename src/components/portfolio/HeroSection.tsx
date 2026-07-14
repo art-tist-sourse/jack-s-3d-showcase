@@ -23,7 +23,7 @@ export function HeroSection() {
         <FadeIn as="h1" delay={0.15} y={40}
           className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-[11vw] sm:text-[12vw] md:text-[13vw] lg:text-[14.5vw]"
         >
-          Hi, i&apos;m kumar
+          Mudavath Kumar
         </FadeIn>
       </div>
 
@@ -33,7 +33,7 @@ export function HeroSection() {
             className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug max-w-[160px] sm:max-w-[220px] md:max-w-[260px]"
             style={{ fontSize: "clamp(0.75rem, 1.4vw, 1.5rem)" }}
           >
-            a full stack &amp; ai engineer driven by building striking and unforgettable products
+            CS engineer &amp; problem solver based in Hyderabad, India — building full stack &amp; AI-driven products
           </p>
         </FadeIn>
         <FadeIn delay={0.5} y={20}>
