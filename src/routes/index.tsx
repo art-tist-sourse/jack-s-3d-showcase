@@ -7,6 +7,11 @@ import { ProjectsSection } from "@/components/portfolio/ProjectsSection";
 import { ExperienceSection } from "@/components/portfolio/ExperienceSection";
 import { CredentialsSection } from "@/components/portfolio/CredentialsSection";
 import { ContactSection } from "@/components/portfolio/ContactSection";
+import { ScrollProgress } from "@/components/portfolio/ScrollProgress";
+import { CursorFollower } from "@/components/portfolio/CursorFollower";
+import { PageLoader } from "@/components/portfolio/PageLoader";
+import { BackToTop } from "@/components/portfolio/BackToTop";
+import { AmbientOrbs } from "@/components/portfolio/AmbientOrbs";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -14,7 +19,12 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main style={{ background: "#0C0C0C", overflowX: "clip" }}>
+    <main style={{ background: "#0C0C0C", overflowX: "clip", position: "relative" }}>
+      <PageLoader />
+      <ScrollProgress />
+      <CursorFollower />
+      <AmbientOrbs />
+      <div style={{ position: "relative", zIndex: 1 }}>
       <HeroSection />
       <MarqueeSection />
       <AboutSection />
@@ -23,6 +33,8 @@ function Index() {
       <ExperienceSection />
       <CredentialsSection />
       <ContactSection />
+      </div>
+      <BackToTop />
     </main>
   );
 }
